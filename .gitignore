@@ -1,0 +1,10 @@
+/.idea
+/.vscode
+*.log
+.env
+/.settings
+.project
+.buildpath
+/public/upload
+/swoole/runtime
+/runtime

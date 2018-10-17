@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>服务在线列表</title>
+</head>
+<body>
+<div class="bs-docs-header" id="content" tabindex="-1">
+    <div class="container">
+        <h1>服务</h1>
+        <p>当前<code class="highlighter-rouge">{$serverType}</code>的服务列表</p>
+    </div>
+</div>
+<div class="container bs-docs-container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>服务地址</th>
+            <th>状态</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {foreach $list as $key => $val}
+        <tr>
+            <td>{$val.url}</td>
+            <td>{$val.status}</td>
+            <td>
+                <a class="btn  btn-warning" href="{:url('del', ['serverType' => $serverType, 'keys' => $key])}">删除</a>
+                {if $val.status == "运行中"}
+                <a class="btn  btn-warning" href="{:url('change', ['serverType' => $serverType, 'keys' => $key])}">下架</a>
+                {else/}
+                <a class="btn  btn-warning" href="{:url('change', ['serverType' => $serverType, 'keys' => $key])}">上架</a>
+                {/if}
+            </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+</body>
+</html>
