@@ -758,6 +758,7 @@ abstract class Connection
             return $this->numRows;
         } catch (\PDOException $e) {
             if ($this->isBreak($e)) {
+                echo "断线重连【1】".$e->getMessage();
                 return $this->close()->execute($sql, $bind, $query);
             }
 

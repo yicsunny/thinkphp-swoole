@@ -5,7 +5,7 @@
  * Date: 2018/10/12
  * Time: 21:16
  */
-namespace app\statistics;
+namespace app\statistics\controller;
 
 use app\statistics\logic\UrlLogic;
 use think\Controller;

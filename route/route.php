@@ -27,3 +27,7 @@ Route::group("index", function (){
     Route::get("list", "index/Index/api");
     Route::get("index", "index/Index/index");
 });
+
+Route::group('statistics', function (){
+    Route::get('add', 'statistics/Url/index');
+});

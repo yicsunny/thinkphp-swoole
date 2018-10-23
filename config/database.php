@@ -60,4 +60,32 @@ return [
     'break_reconnect' => true,
     // 断线标识字符串
     'break_match_str' => [],
+    'db_sts' => [
+        // 数据库类型
+        'type'            => 'mysql',
+        // 服务器地址
+        'hostname'        => \think\facade\Env::get('Database_Sts.hostname', ''),
+        // 数据库名
+        'database'        => \think\facade\Env::get('Database_Sts.database', ''),
+        // 用户名
+        'username'        => \think\facade\Env::get('Database_Sts.username', ''),
+        // 密码
+        'password'        => \think\facade\Env::get('Database_Sts.password', ''),
+        // 端口
+        'hostport'        => \think\facade\Env::get('Database_Sts.port', ''),
+        // 数据库连接参数
+        'params'          => [
+            PDO::ATTR_EMULATE_PREPARES => true,
+        ],
+        // 数据库编码默认采用utf8
+        'charset'         => 'utf8',
+        // 数据库表前缀
+        'prefix'          => 'tbl_',
+        // 数据库调试模式
+        'debug'           => true,
+        // 数据集返回类型
+        'resultset_type'  => 'array',
+        // 是否需要断线重连
+        'break_reconnect' => true,
+    ],
 ];

@@ -24,7 +24,7 @@ return [
     'swoole_class' => 'app\swoole\Service', // 自定义服务类名称
 
     // 可以支持swoole的所有配置参数
-    'daemonize'    => true,
+    'daemonize'    => false,
     'pid_file'     => Env::get('runtime_path') . 'swoole_server.pid',
     'log_file'     => Env::get('runtime_path') . 'swoole_server.log',
 
